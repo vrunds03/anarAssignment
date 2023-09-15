@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="header">
+        <h1>To-do List</h1>
+    </div>
+    <div class="task-container">
+        <div class="card">
+            <div class="card-body" [ngClass]="{'completed': task.completed}" *ngFor="let task of tasks |async">
+                <h3 class="taskId">{{task.id}})</h3>
+                <h3 class="title" [ngClass]="{'completed': task.completed}">{{ task.title }}</h3>
+                <input class="checkbox" type="checkbox" [checked]="task.completed" (change)="onTaskChange(task)">
+            </div>
+        </div>
+    </div>
+
+</div>
